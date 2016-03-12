@@ -18,8 +18,14 @@ import android.view.MenuItem;
 
 import com.inmath.dl_test.adapter.ViewPageAdapter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private List<String> Title=new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +34,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("InMath");
         setSupportActionBar(toolbar);
-
+        Title.add("每日公式");
+        Title.add("试题库");
+        Title.add("数学工具");
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -38,15 +46,9 @@ public class MainActivity extends AppCompatActivity
 //            }
 //        });
         ViewPager viewPager= (ViewPager) findViewById(R.id.viewpage);
-        ViewPageAdapter viewPageAdapter=new ViewPageAdapter(getSupportFragmentManager());
-        viewPageAdapter.addFragment(new Fragment1(), "每日公式");
-        viewPageAdapter.addFragment(new fragment2(), "分类测试");
-        viewPageAdapter.addFragment(new Fragment3(), "预测考卷");
+        ViewPageAdapter viewPageAdapter=new ViewPageAdapter(getSupportFragmentManager(),Title);
         viewPager.setAdapter(viewPageAdapter);
         TabLayout tabLayout= (TabLayout) findViewById(R.id.tab);
-        tabLayout.addTab(tabLayout.newTab().setText("每日公式"));
-        tabLayout.addTab(tabLayout.newTab().setText("分类测试"));
-        tabLayout.addTab(tabLayout.newTab().setText("预测考卷"));
         tabLayout.setupWithViewPager(viewPager);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

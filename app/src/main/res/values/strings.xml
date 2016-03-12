@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">DL_TEST</string>
+    <string name="app_name">Inmath</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -7,6 +7,17 @@
     <string name="Gallery">公式收藏</string>
     <string name="Tools">数学工具</string>
     <string name="User">用户中心</string>
+    <string name="query">查询</string>
+    <string name="guide">求导法则</string>
+    <string name="Jifen">基本积分</string>
+    <string name="Juzhen">矩阵运算</string>
+    <string name="Taile">泰勒公式</string>
+    <string name="Kexi">柯西中值</string>
+    <string name="Fuli">傅里叶级数</string>
+    <string name="Posong">泊松分布</string>
+    <string name="Weifen">微分运算</string>
+    <string name="Laibu">莱布尼茨</string>
+    <string name="Imghint">显示公式</string>
 
     <string name="action_settings">Settings</string>
 </resources>
