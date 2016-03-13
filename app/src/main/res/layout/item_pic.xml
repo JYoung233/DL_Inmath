@@ -6,8 +6,8 @@
     android:layout_height="120dp"
     android:id="@+id/collect_pic"
     android:layout_marginBottom="2dp"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
+    android:layout_marginLeft="2dp"
+    android:layout_marginRight="2dp"
     android:layout_marginTop="2dp"
     app:cardCornerRadius="5dp"
     app:elevation="5dp"
@@ -19,7 +19,7 @@
         >
         <ImageView
             android:id="@+id/im1"
-            android:layout_width="120dp"
+            android:layout_width="wrap_content"
             android:layout_height="120dp"
             android:src="@mipmap/ic_launcher"/>
 

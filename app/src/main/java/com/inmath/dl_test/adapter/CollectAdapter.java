@@ -31,11 +31,11 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
     private LayoutInflater mInflater;
     private AssetManager am;
     private List<Integer> mHeights;
-    interface mClickListener{
+    public interface mClickListener{
         public void OnPicItemClick(View v,int pos);
         public void OnPicItemLongClick(View v,int pos);
     }
-    private mClickListener mlistener;
+    public mClickListener mlistener;
     public void msetOnClickListener(mClickListener listener){
         mlistener=listener;
     }
@@ -47,7 +47,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
         Resources resources=c.getResources();
         am=resources.getAssets();
         mHeights=new ArrayList<>();
-        for(int i=0;i<mHeights.size();i++){
+        for(int i=0;i<mSource.getLength();i++){
             mHeights.add((int) (100+Math.random()*300));
         }
     }
