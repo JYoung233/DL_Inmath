@@ -2,95 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".MainActivity" >
-        <LinearLayout
-            android:id="@+id/lfen"
+    android:paddingTop="30dp"
+    android:layout_gravity="center_vertical"
+    >
+    <android.support.v7.widget.RecyclerView
+            android:id="@+id/tab2_recycler"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <ImageView
-                android:src="@mipmap/fen"
-                android:paddingLeft="10dp"
-                android:layout_width="54dp"
-                android:layout_height="54dp"/>
-            <TextView
-                android:id="@+id/textview_main1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:text="分类模拟题" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/lli"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <ImageView
-                android:src="@mipmap/li"
-                android:paddingLeft="10dp"
-                android:layout_width="54dp"
-                android:layout_height="54dp"/>
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/textview_main2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:text="历年考研真题" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/lda"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <ImageView
-                android:src="@mipmap/da"
-                android:paddingLeft="10dp"
-                android:layout_width="54dp"
-                android:layout_height="54dp"/>
-
-            <TextView
-                android:id="@+id/textview_main3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:text="答题闯关" />
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/lkao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <ImageView
-                android:src="@mipmap/kao"
-                android:paddingLeft="10dp"
-                android:layout_width="54dp"
-                android:layout_height="54dp"/>
-
-            <TextView
-                android:id="@+id/textview_main4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="30sp"
-                android:paddingLeft="10dp"
-                android:layout_gravity="center"
-                android:text="考研预测 " />
-        </LinearLayout>
-    </LinearLayout>
-
+    </android.support.v7.widget.RecyclerView>
 </LinearLayout>

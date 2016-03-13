@@ -18,6 +18,8 @@
     <string name="Weifen">微分运算</string>
     <string name="Laibu">莱布尼茨</string>
     <string name="Imghint">显示公式</string>
+    <string name="Search">查找公式</string>
+    <string name="alarm">设置提醒</string>
 
     <string name="action_settings">Settings</string>
 </resources>

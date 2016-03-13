@@ -3,6 +3,8 @@ package com.inmath.dl_test.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +12,15 @@ import android.widget.LinearLayout;
 
 import com.inmath.dl_test.MathTest;
 import com.inmath.dl_test.R;
+import com.inmath.dl_test.adapter.TabAdapter;
 
 /**
  * Created by asus on 2016/3/12.
+ * 第二个tab的显示效果
  */
 public class Fragment2 extends Fragment {
+    private RecyclerView mRecyclerView;
+    private TabAdapter madapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -23,46 +29,18 @@ public class Fragment2 extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        LinearLayout fen= (LinearLayout) view.findViewById(R.id.lfen);
-        LinearLayout li= (LinearLayout) view.findViewById(R.id.lli);
-        LinearLayout da= (LinearLayout) view.findViewById(R.id.lda);
-        LinearLayout kao= (LinearLayout) view.findViewById(R.id.lkao);
-        fen.setOnClickListener(new View.OnClickListener() {
+        mRecyclerView= (RecyclerView) view.findViewById(R.id.tab2_recycler);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        madapter=new TabAdapter(getActivity());
+        madapter.msetOnClickListener(new TabAdapter.mClickListener() {
             @Override
-            public void onClick(View v) {
+            public void mOnClickListener(View view, int pos) {
                 Intent intent = new Intent(getActivity(), MathTest.class);
-                intent.putExtra("parentId", 1);
+                intent.putExtra("parentId", pos+1);
                 startActivity(intent);
-
             }
         });
-        li.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MathTest.class);
-                intent.putExtra("parentId", 2);
-                startActivity(intent);
-
-            }
-        });
-        da.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MathTest.class);
-                intent.putExtra("parentId", 3);
-                startActivity(intent);
-
-            }
-        });
-        kao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), MathTest.class);
-                intent.putExtra("parentId", 4);
-                startActivity(intent);
-
-            }
-        });
+        mRecyclerView.setAdapter(madapter);
 
     }
 }

@@ -2,6 +2,7 @@ package com.inmath.dl_test;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -27,6 +28,9 @@ import com.lidroid.xutils.http.client.HttpRequest.HttpMethod;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class MathTest extends Activity implements OnScrollListener {
 	private int parentId = 1;
 
@@ -35,6 +39,7 @@ public class MathTest extends Activity implements OnScrollListener {
 	private ListView listView;
 
 	private View moreView;
+	private Toolbar mToolbar;
 
 	private int lastItem;
 
@@ -46,7 +51,8 @@ public class MathTest extends Activity implements OnScrollListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_one);
-
+		mToolbar= (Toolbar) findViewById(R.id.toolbar3);
+        mToolbar.setTitle("Inmath");
 		parentId = getIntent().getIntExtra("parentId", 2);
 
 		listView = (ListView) findViewById(R.id.listView);
