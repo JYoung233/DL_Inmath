@@ -8,7 +8,7 @@ import com.inmath.dl_test.rdata.DBopenHelper;
 
 /**
  * Created by yangyang on 2016/3/13.
- * 为CollectAdapter准备好数据源
+ * 为CollectAdapter准备好数据源,下次注意尽量再把方法写细些，这样其他适配器才可以复用
  */
 public class ImageSource {
     private Context mContext;

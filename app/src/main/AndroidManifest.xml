@@ -44,7 +44,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Gallerypic"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".rdata.NoteMain"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
+
 
 
 </manifest>

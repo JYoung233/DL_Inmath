@@ -18,6 +18,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.inmath.dl_test.adapter.ViewPageAdapter;
+import com.inmath.dl_test.rdata.NoteMain;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,6 +107,8 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            Intent intent=new Intent(MainActivity.this,NoteMain.class);
+            MainActivity.this.startActivity(intent);
         } else if (id == R.id.nav_gallery) {
             Intent intent=new Intent(MainActivity.this,CollectPic.class);
             MainActivity.this.startActivity(intent);
@@ -118,8 +121,8 @@ public class MainActivity extends AppCompatActivity
 
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+//        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+//        drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 }
