@@ -80,6 +80,11 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/load.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/papershow.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/showselect.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/hr.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/imcontent.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/imtitle.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/noteicon.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/xiangji.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/favourite.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/shoucang.png" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />

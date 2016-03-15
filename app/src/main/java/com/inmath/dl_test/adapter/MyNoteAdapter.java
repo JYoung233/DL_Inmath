@@ -23,12 +23,12 @@ public class MyNoteAdapter extends RecyclerView.Adapter<MyNoteAdapter.MyHolder>{
     private LayoutInflater mInflater;
     private Cursor c;
     private int[] images=new int[]{
-        R.mipmap.fen,R.mipmap.favourite};
+        R.mipmap.a,R.mipmap.b,R.mipmap.c,R.mipmap.d,R.mipmap.e,R.mipmap.f,R.mipmap.g,R.mipmap.h,R.mipmap.i,R.mipmap.j};
     private NoteSource noteSource;
 
     public interface mClickListener{
         public void OnPicItemClick(View v,int pos);
-        public void OnPicItemLongClick(View v,int pos);
+        public void OnPicItemLongClick(View v,int pos,int length);
     }
     public mClickListener mlistener;
     public void msetOnClickListener(mClickListener listener){
@@ -40,7 +40,6 @@ public class MyNoteAdapter extends RecyclerView.Adapter<MyNoteAdapter.MyHolder>{
         mInflater=LayoutInflater.from(mContext);
         noteSource=new NoteSource(mContext);
         c=noteSource.selectNote();
-
     }
 
     @Override
@@ -52,23 +51,30 @@ public class MyNoteAdapter extends RecyclerView.Adapter<MyNoteAdapter.MyHolder>{
 
     @Override
     public void onBindViewHolder(final MyHolder holder, final int position) {
-
+        c=noteSource.selectNote();
         if(c.moveToPosition(position)){
             holder.im.setImageResource(images[position%images.length]);
             holder.tvTitle.setText(c.getString(1));
             holder.tvContent.setText(c.getString(2));
+        }if(c.isAfterLast()){
+            noteSource.closeCur();
+            noteSource.closeDB();
+            c.close();
+
         }
         if(mlistener!=null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    mlistener.OnPicItemClick(holder.itemView, position);
+                    int pos=holder.getLayoutPosition();//为了确保当前位置正确
+                    mlistener.OnPicItemClick(holder.itemView, pos);
                 }
             });
             holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    mlistener.OnPicItemLongClick(holder.itemView, position);
+                    int pos=holder.getLayoutPosition();
+                    mlistener.OnPicItemLongClick(holder.itemView,pos,c.getCount());
                     return false;
                 }
             });
@@ -76,15 +82,20 @@ public class MyNoteAdapter extends RecyclerView.Adapter<MyNoteAdapter.MyHolder>{
         }
 
     }
-    public void delete(int position){
+    public void delete(int position,int length){
         noteSource.DeleteNote(position);
+        noteSource.MoreUpgrade(position,length);
         notifyItemRemoved(position);
-    }
 
+    }
+    public void add(){
+        notifyItemInserted(getItemCount());
+    }
 
     @Override
     public int getItemCount() {
-        return c.getCount();
+
+      return c.getCount();
     }
 
     class MyHolder extends RecyclerView.ViewHolder{

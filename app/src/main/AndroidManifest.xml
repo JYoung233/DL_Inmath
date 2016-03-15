@@ -46,6 +46,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".rdata.NoteMain"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".AddNote"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ViewNote"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 

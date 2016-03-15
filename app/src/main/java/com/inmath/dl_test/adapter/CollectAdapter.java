@@ -31,6 +31,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
     private LayoutInflater mInflater;
     private AssetManager am;
     private List<Integer> mHeights;
+    private Cursor cur;
     public interface mClickListener{
         public void OnPicItemClick(View v,int pos);
         public void OnPicItemLongClick(View v,int pos);
@@ -47,9 +48,11 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
         Resources resources=c.getResources();
         am=resources.getAssets();
         mHeights=new ArrayList<>();
-        for(int i=0;i<mSource.getLength();i++){
+        cur=mSource.SeletPic();
+        for(int i=0;i<cur.getCount();i++){
             mHeights.add((int) (100+Math.random()*300));
         }
+
     }
 
     @Override
@@ -62,11 +65,12 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
     @Override
     public void onBindViewHolder(final MyHolder holder, final int position) {
     //为瀑布流设置随机高度
+        cur=mSource.SeletPic();
         ViewGroup.LayoutParams params=holder.itemView.getLayoutParams();
         params.height=mHeights.get(position);
         holder.itemView.setLayoutParams(params);
         //从assets中读取图片信息
-        Cursor cur=mSource.getCursor();
+
         if(cur.moveToPosition(position)){
             String filename=cur.getString(0);
             InputStream is=null;
@@ -81,6 +85,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
         }if(cur.isAfterLast()){
             mSource.closeCur();
             mSource.closeDB();
+
         }
         if(mlistener!=null){
             holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -103,11 +108,13 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
 
     @Override
     public int getItemCount() {
-        return mSource.getLength();
+        return cur.getCount();
     }
     public void delete(int position){
       //怎么才能安全地删除数据库中的数据？？？
+        mSource.DeletePic(position);
         notifyItemRemoved(position);
+
     }
 
     class MyHolder extends RecyclerView.ViewHolder{
