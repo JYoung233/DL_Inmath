@@ -40,7 +40,7 @@ public class Fragment1 extends Fragment {
     private String[] title5=new String[]{"柯西中值","0-1分布","贝叶斯"};
     private String[] title6=new String[]{"傅里叶级数","泊松分布","莱布尼兹"};
     private String[] title7=new String[]{"泊松分布","分步积分","积分上限"};
-    private String[] title8=new String[]{"微分运算","多重积分","超几何分步"};
+    private String[] title8=new String[]{"微分运算","多重积分","超几何分布"};
     private String[] title9=new String[]{"莱布尼兹","佚名统计学","F分布"};
     private Myapplication app;
     @Override
