@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.inmath.dl_test.adapter.ViewPageAdapter;
+import com.inmath.dl_test.fragment.Fragment3;
 import com.inmath.dl_test.rdata.NoteMain;
 
 import java.util.ArrayList;
@@ -127,8 +128,14 @@ public class MainActivity extends AppCompatActivity
             MainActivity.this.startActivity(intent);
 
         } else if (id == R.id.nav_manage) {
+            drawer.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(MainActivity.this, Fragment3.class);
+            startActivity(intent);
 
         } else if (id == R.id.user_info) {
+            drawer.closeDrawer(GravityCompat.START);
+            Intent intent=new Intent(MainActivity.this,SaveSecretActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.user_share) {
             drawer.closeDrawer(GravityCompat.START);

@@ -55,6 +55,10 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".Calculator"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".SaveSecretActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Register2"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 
