@@ -24,11 +24,11 @@
               android:contentDescription="@string/Imghint"
               android:layout_height="match_parent"
               android:layout_width="match_parent"
-              android:scaleType="fitXY" />
+              android:scaleType="fitCenter" />
           <ImageButton
               android:id="@+id/Collect"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
+              android:layout_width="36dp"
+              android:layout_height="36dp"
               android:layout_gravity="end|right"
               />
         

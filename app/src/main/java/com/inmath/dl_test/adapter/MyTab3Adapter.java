@@ -19,8 +19,8 @@ import java.util.List;
 public class MyTab3Adapter extends RecyclerView.Adapter<MyTab3Adapter.MyHolder> {
     private LayoutInflater mInflater;
     private Context mContext;
-    private int image[]=new int[]{R.mipmap.a,R.mipmap.b,R.mipmap.c,R.mipmap.d,
-            R.mipmap.e,R.mipmap.f,R.mipmap.g,R.mipmap.h,R.mipmap.i,R.mipmap.j
+    private int image[]=new int[]{R.mipmap.amath,R.mipmap.bmath,R.mipmap.cmath,R.mipmap.dmath,
+            R.mipmap.emath,R.mipmap.fmath,R.mipmap.gmatn,R.mipmap.hmath,R.mipmap.imath,R.mipmap.jmath
 
     };
     private List<Integer> mHeights;

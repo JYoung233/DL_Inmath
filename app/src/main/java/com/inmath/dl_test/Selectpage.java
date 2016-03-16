@@ -43,7 +43,14 @@ public class Selectpage extends Activity implements OnGestureListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.showselect);
 		Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar1);
-		toolbar.setTitle("InMath");
+		toolbar.setTitle("公式学习");
+		toolbar.setNavigationIcon(R.mipmap.arrow);
+        toolbar.setNavigationOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Selectpage.this.finish();
+            }
+        });
 		iv=(ImageView)findViewById(R.id.imageView6);
 		im= (ImageButton) findViewById(R.id.Collect);
 		am=getAssets();

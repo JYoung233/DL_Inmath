@@ -33,7 +33,14 @@ public class AddNote extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.addnote);
         mToolbar= (Toolbar) findViewById(R.id.toolbar6);
-        mToolbar.setTitle("Inmath");
+        mToolbar.setTitle("课堂笔记");
+        mToolbar.setNavigationIcon(R.mipmap.arrow);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AddNote.this.finish();
+            }
+        });
         save=(ImageButton)findViewById(R.id.save);
         title=(EditText)findViewById(R.id.title);
         content=(EditText)findViewById(R.id.content);

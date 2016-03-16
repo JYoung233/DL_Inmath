@@ -38,6 +38,13 @@ public class Register2 extends Activity {
 		setContentView(R.layout.avtivity_register2);
 		toolbar= (Toolbar) findViewById(R.id.toolbar7);
 		toolbar.setTitle("用户注册");
+		toolbar.setNavigationIcon(R.mipmap.arrow);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Register2.this.finish();
+			}
+		});
 		editview1 = (EditText) this.findViewById(R.id.editText1);
 		editview2 = (EditText) this.findViewById(R.id.editText2);
 		editview3 = (EditText) this.findViewById(R.id.editText3);

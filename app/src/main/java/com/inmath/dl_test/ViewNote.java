@@ -46,11 +46,11 @@ public class ViewNote extends AppCompatActivity{
         setContentView(R.layout.noteview);
         toolbar= (Toolbar) findViewById(R.id.toolbar5);
         setSupportActionBar(toolbar);
-
+        toolbar.setNavigationIcon(R.mipmap.arrow);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                ViewNote.this.finish();
             }
         });
         CollapsingToolbarLayout mcol= (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);

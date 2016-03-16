@@ -41,6 +41,13 @@ public class SaveSecretActivity extends Activity {
 	    Button button2=(Button)this.findViewById(R.id.button2);
 		toolbar= (Toolbar) findViewById(R.id.toolbar8);
 		toolbar.setTitle("用户登录");
+		toolbar.setNavigationIcon(R.mipmap.arrow);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				SaveSecretActivity.this.finish();
+			}
+		});
 		etUid=(EditText)findViewById(R.id.yonghuming2);
 		etPwd=(EditText)findViewById(R.id.mima2);
 		cb=(CheckBox)findViewById(R.id.checkBox1);
@@ -88,7 +95,7 @@ public class SaveSecretActivity extends Activity {
 
 					@Override
 					public void onFailure(HttpException arg0, String arg1) {
-						Toast.makeText(SaveSecretActivity.this, "网络问题，请重试", 0).show();
+						Toast.makeText(SaveSecretActivity.this, "网络问题，请重试", Toast.LENGTH_SHORT).show();
 					}
 
 					@Override
@@ -97,11 +104,11 @@ public class SaveSecretActivity extends Activity {
 						JSONObject jsonObject = JSONObject.parseObject(result);
 						int errorCode = jsonObject.getInteger("errorCode");
 						if (errorCode == 1000) {
-							Toast.makeText(SaveSecretActivity.this, "登陆成功", 0).show();
+							Toast.makeText(SaveSecretActivity.this, "登陆成功", Toast.LENGTH_SHORT).show();
 							Intent intent1=new Intent(SaveSecretActivity.this,MainActivity.class);//这里回到主窗口，一般回到信息窗口
 							startActivity(intent1);
 						} else {
-							Toast.makeText(SaveSecretActivity.this, "登陆失败", 0).show();
+							Toast.makeText(SaveSecretActivity.this, "登陆失败",  Toast.LENGTH_SHORT).show();
 							
 						}
 					}

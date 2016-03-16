@@ -33,7 +33,14 @@ public class NoteMain extends Activity{
         setContentView(R.layout.mainnote);
         mRecyclerView = (RecyclerView) findViewById(R.id.note_list);
         mToolbar = (Toolbar) findViewById(R.id.toolbar4);
-        mToolbar.setTitle("Inmath");
+        mToolbar.setTitle("笔记列表");
+        mToolbar.setNavigationIcon(R.mipmap.arrow);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NoteMain.this.finish();
+            }
+        });
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         madapter = new MyNoteAdapter(this);

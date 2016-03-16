@@ -52,7 +52,15 @@ public class MathTest extends Activity implements OnScrollListener {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_one);
 		mToolbar= (Toolbar) findViewById(R.id.toolbar3);
-        mToolbar.setTitle("Inmath");
+        mToolbar.setTitle("试题库");
+		mToolbar.setNavigationIcon(R.mipmap.arrow);
+		mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				MathTest.this.finish();
+
+			}
+		});
 		parentId = getIntent().getIntExtra("parentId", 2);
 
 		listView = (ListView) findViewById(R.id.listView);

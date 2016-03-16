@@ -75,6 +75,13 @@ public class Calculator extends Activity {
 		setContentView(R.layout.calculator);
         toolbar= (Toolbar) findViewById(R.id.toolbar6);
 		toolbar.setTitle("计算器");
+		toolbar.setNavigationIcon(R.mipmap.arrow);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Calculator.this.finish();
+			}
+		});
 		// 获取所有按键，保存到数组当中去
 		final Button number[] = new Button[10];
 		final Button mark[] = new Button[13];

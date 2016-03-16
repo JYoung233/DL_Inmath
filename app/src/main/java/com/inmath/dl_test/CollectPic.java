@@ -27,7 +27,14 @@ public class CollectPic extends Activity {
         setContentView(R.layout.collectpic);
         mRecyclerView= (RecyclerView) findViewById(R.id.pic_list);
         mToolbar= (Toolbar) findViewById(R.id.toolbar2);
-        mToolbar.setTitle("Inmath");
+        mToolbar.setTitle("收藏公式");
+        mToolbar.setNavigationIcon(R.mipmap.arrow);
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CollectPic.this.finish();
+            }
+        });
         mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         mAdpater=new CollectAdapter(this);
         mAdpater.msetOnClickListener(new CollectAdapter.mClickListener() {

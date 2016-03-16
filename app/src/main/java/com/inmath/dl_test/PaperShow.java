@@ -6,8 +6,10 @@ import com.lidroid.xutils.bitmap.BitmapDisplayConfig;
 import android.app.Activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.text.Html.ImageGetter;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.ImageView;
 
 public class PaperShow extends Activity {// 这个用来接收图片的选择信息
@@ -15,11 +17,20 @@ public class PaperShow extends Activity {// 这个用来接收图片的选择信
 
 	private String name;
 	private String path;
+	private Toolbar toolbar;
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.papershow);
 		iv = (ImageView) findViewById(R.id.papershow1);
+		toolbar= (Toolbar) findViewById(R.id.toolbar9);
+		toolbar.setNavigationIcon(R.mipmap.arrow);
+		toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				PaperShow.this.finish();
+			}
+		});
 		name = getIntent().getStringExtra("name");
 		path = getIntent().getStringExtra("path");
 		iv.setAdjustViewBounds(true);

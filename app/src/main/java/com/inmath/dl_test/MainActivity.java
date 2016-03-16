@@ -98,9 +98,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }else if(id==R.id.action_search){
+       if(id==R.id.action_search){
            Intent intent=new Intent(MainActivity.this,SearchMath.class);
             startActivity(intent);
 
@@ -146,7 +144,7 @@ public class MainActivity extends AppCompatActivity
             new AlertDialog.Builder(this).setTitle("打卡分享").setView(view).setIcon(R.mipmap.life).setPositiveButton("我要打卡", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    app.setDay(day+1);
+                    app.setDay(app.getDay()+1);
                     Toast.makeText(MainActivity.this,"打卡成功",Toast.LENGTH_SHORT).show();
 
                 }
