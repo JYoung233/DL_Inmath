@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
-    @SuppressWarnings("StatementWithEmptyBody")
+
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -129,7 +129,7 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
             drawer.closeDrawer(GravityCompat.START);
-            Intent intent=new Intent(MainActivity.this, Fragment3.class);
+            Intent intent=new Intent(MainActivity.this,Calculator.class);
             startActivity(intent);
 
         } else if (id == R.id.user_info) {
