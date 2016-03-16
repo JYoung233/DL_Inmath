@@ -1,5 +1,6 @@
 package com.inmath.dl_test.adapter;
 
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,12 @@ public class MyViewAdapter extends PagerAdapter{
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
         container.addView(list.get(position));
+        list.get(position).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //怎么设置设置点击事件返回。
+            }
+        });
         return list.get(position);
     }
 }

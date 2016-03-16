@@ -78,7 +78,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
                 is=am.open(filename);
                 Bitmap bm= BitmapFactory.decodeStream(is);
                 holder.im.setImageBitmap(bm);
-                holder.im.setScaleType(ImageView.ScaleType.FIT_XY);
+                holder.im.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -111,7 +111,7 @@ public class CollectAdapter extends RecyclerView.Adapter<CollectAdapter.MyHolder
         return cur.getCount();
     }
     public void delete(int position){
-      //怎么才能安全地删除数据库中的数据？？？
+
         mSource.DeletePic(position);
         notifyItemRemoved(position);
 

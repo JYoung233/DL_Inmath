@@ -8,6 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.inmath.dl_test.adapter.MyViewAdapter;
@@ -37,7 +39,7 @@ public class Gallerypic extends Activity {
         imageviewList=new ArrayList<>();
         viewPager= (ViewPager) findViewById(R.id.viewcollect1);
         mSource=new ImageSource(this);
-        cur=mSource.getCursor();//这样就相当于把索引放到了本地变量
+        cur=mSource.SeletPic();//这样就相当于把索引放到了本地变量
         am=this.getResources().getAssets();
         cur.moveToFirst();
         while(!cur.isAfterLast()){
@@ -59,6 +61,7 @@ public class Gallerypic extends Activity {
         Intent intent = getIntent();
         int pos= intent.getIntExtra("position", 0);
         viewPager.setCurrentItem(pos);
+
         mSource.closeCur();
         mSource.closeDB();
 

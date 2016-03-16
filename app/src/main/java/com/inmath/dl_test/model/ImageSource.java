@@ -19,15 +19,17 @@ public class ImageSource {
     public ImageSource(Context mContext) {
         this.mContext = mContext;
         dBopenHelper=new DBopenHelper(mContext);
-        sqLiteDatabase=dBopenHelper.getReadableDatabase();
+
 
 
     }
     public Cursor SeletPic(){
+        sqLiteDatabase=dBopenHelper.getReadableDatabase();
         cursor=sqLiteDatabase.rawQuery("select * from photo",null);
         return cursor;
     }
     public void DeletePic(int pos){
+        sqLiteDatabase=dBopenHelper.getReadableDatabase();
         if(cursor.isClosed()){
             cursor=sqLiteDatabase.rawQuery("select * from photo",null);
         }
@@ -35,6 +37,7 @@ public class ImageSource {
             String filename=cursor.getString(0);
             sqLiteDatabase.execSQL("delete from photo where photoname=?", new String[]{String.valueOf(filename)});
         }
+        sqLiteDatabase.close();
 
     }
     public Cursor getCursor(){
