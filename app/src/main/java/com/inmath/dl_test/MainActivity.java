@@ -1,5 +1,7 @@
 package com.inmath.dl_test;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -8,11 +10,17 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.inmath.dl_test.adapter.ViewPageAdapter;
 import com.inmath.dl_test.rdata.NoteMain;
@@ -24,7 +32,8 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private List<String> Title=new ArrayList<>();
     private SearchView searchView;
-
+    private Myapplication app;
+    private int day;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +45,8 @@ public class MainActivity extends AppCompatActivity
         Title.add("每日公式");
         Title.add("试题库");
         Title.add("数学工具");
+        app= (Myapplication) this.getApplication();
+        day=app.getDay();
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -103,6 +114,8 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
@@ -115,9 +128,28 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.user_info) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.user_share) {
+            drawer.closeDrawer(GravityCompat.START);
+            LayoutInflater layout=this.getLayoutInflater();
+            View view=layout.inflate(R.layout.reportdialog_item, (ViewGroup) findViewById(R.id.share_dialog));
+            TextView tv= (TextView) view.findViewById(R.id.second);
+            tv.setText(String.valueOf(app.getDay()));
+            new AlertDialog.Builder(this).setTitle("打卡分享").setView(view).setIcon(R.mipmap.life).setPositiveButton("我要打卡", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    app.setDay(day+1);
+                    Toast.makeText(MainActivity.this,"打卡成功",Toast.LENGTH_SHORT).show();
+
+                }
+            }).setNegativeButton("没学习，不打卡", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            }).show();
+
 
         }
 
