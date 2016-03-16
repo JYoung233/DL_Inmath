@@ -53,6 +53,8 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".SearchMath"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Calculator"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 

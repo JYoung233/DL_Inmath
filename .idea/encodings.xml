@@ -64,6 +64,7 @@
     <file url="file://$PROJECT_DIR$/app/src/main/assets/8.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/assets/9.png" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/assets/none.png" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/inmath/dl_test/Calculator.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/inmath/dl_test/MathTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/inmath/dl_test/PaperShow.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/com/inmath/dl_test/Selectpage.java" charset="UTF-8" />
@@ -75,7 +76,11 @@
     <file url="file://$PROJECT_DIR$/app/src/main/res/anim/scalebutton.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/anim/scalebutton1.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/anim/scalebutton2.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/buttonstyle.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/buttonstyle2.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-v21/buttonstyle3.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main_one.xml" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/calculator.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/exam_item.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/load.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/layout/papershow.xml" charset="GBK" />

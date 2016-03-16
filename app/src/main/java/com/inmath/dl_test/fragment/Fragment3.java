@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 
 import com.inmath.dl_test.AddNote;
+import com.inmath.dl_test.Calculator;
 import com.inmath.dl_test.CollectPic;
 import com.inmath.dl_test.R;
 import com.inmath.dl_test.adapter.MyTab3Adapter;
@@ -54,7 +55,7 @@ public class Fragment3 extends Fragment {
         l3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getActivity(),AddNote.class);//这里还要加上计算器
+                Intent intent=new Intent(getActivity(),Calculator.class);//这里还要加上计算器
                 startActivity(intent);
             }
         });

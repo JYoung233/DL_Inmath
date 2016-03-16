@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#f15b6c</color>
     <color name="colorAccent">#33a3dc</color>
     <color name="colorText">#987165</color>
+    <color name="snow">#FFFAFA</color><!--雪白色 -->
 </resources>
