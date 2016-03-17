@@ -10,29 +10,31 @@
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        >
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_gravity="center"
+    <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:text="用户注册"
-        android:textColor="#226677"
-        android:typeface="sans"
-        android:textSize="36dip" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/c"/>
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="用户名："
-        android:textSize="20dip"
+        android:textSize="20sp"
         
          />
 
     <EditText
         android:id="@+id/editText1"
-        android:layout_width="316dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10" >
 
@@ -72,15 +74,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="56dp"
-            android:text="         注册            " />
-
     </RelativeLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:text="注册"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+    </LinearLayout>
 
 </LinearLayout>
