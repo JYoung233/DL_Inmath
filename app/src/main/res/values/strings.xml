@@ -47,6 +47,7 @@
     <string name="ce">CE</string>
     <string name="math_news">九九歌就是我们现在使用的乘法口诀。
     远在公元前的春秋战国时代，九九歌就已经被人们广泛使用。在当时的许多著作中，都有关于九九歌的记载。最初的九九歌是从"九九八十一"起到"二二如四"止，共36句。因为是从"九九八十一"开始，所以取名九九歌。大约在公元五至十世纪间，九九歌才扩充到"一一如一"。大约在公元十三、十四世纪，九九歌的顺序才变成和现在所用的一样，从"一一如一"起到"九九八十一"止。</string>
-
+    <string name="copyeright">copyright@JYoung233 </string>
+    <string name="time">2015-2016</string>
     <string name="action_settings">Settings</string>
 </resources>
